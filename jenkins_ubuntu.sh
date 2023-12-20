@@ -1,0 +1,18 @@
+
+#!/bin/bash
+#jenkins for ubuntu
+sudo apt update -y
+
+sudo apt install default-jre -y
+
+java -version
+
+sudo apt update -y
+
+wget -q -o - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update -y
+sudo add-apt-repository universe -y
+sudo apt-get install jenkins -y
+sudo service jenkins start
